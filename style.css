@@ -874,6 +874,28 @@ body {
   height: 150px;
 }
 
+/* QR Image Styles */
+.qr-image-container {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+  transform: scale(1.05);
+}
+
 .qr-text {
   font-size: 1.1rem;
   font-weight: 500;
@@ -909,28 +931,78 @@ body {
   opacity: 0;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - All Sizes */
+
+/* Large Mobile & Small Tablet (768px and down) */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .welcome-main {
+    font-size: 3.5rem;
+  }
+
+  .welcome-sub {
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+  }
+
+  .signature-svg {
+    width: 250px;
+    height: 70px;
+  }
+
+  .social-links {
+    max-width: 350px;
+  }
+}
+
+/* Standard Mobile (480px and down) */
 @media (max-width: 480px) {
-  .signature-text {
+  .loading-container {
+    padding: 0 1rem;
+  }
+
+  .welcome-main {
     font-size: 3rem;
+  }
+
+  .welcome-sub {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .signature-svg {
+    width: 220px;
+    height: 60px;
   }
 
   .avatar {
     width: 100px;
     height: 100px;
-    font-size: 2.5rem;
   }
 
   .initial {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   .name {
     font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    max-width: 320px;
   }
 
   .social-btn {
     padding: 1rem 1.2rem;
+    border-radius: 15px;
   }
 
   .btn-title {
@@ -944,11 +1016,168 @@ body {
   .modal-content {
     padding: 1.5rem;
     margin: 1rem;
+    width: 95%;
+    max-width: none;
+  }
+
+  .qr-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .qr-text {
+    font-size: 1rem;
+  }
+
+  .bank-info {
+    padding: 0.8rem;
+  }
+
+  .bank-info p {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Small Mobile (360px and down) */
+@media (max-width: 360px) {
+  .main-content {
+    padding: 1rem 0.8rem;
+  }
+
+  .welcome-main {
+    font-size: 2.5rem;
+  }
+
+  .welcome-sub {
+    font-size: 1rem;
+  }
+
+  .signature-svg {
+    width: 200px;
+    height: 50px;
+  }
+
+  .avatar {
+    width: 85px;
+    height: 85px;
+  }
+
+  .initial {
+    font-size: 2.3rem;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    max-width: 280px;
+  }
+
+  .social-btn {
+    padding: 0.9rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-title {
+    font-size: 0.95rem;
+  }
+
+  .btn-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .modal-content {
+    padding: 1.2rem;
+    margin: 0.5rem;
   }
 
   .qr-placeholder {
     width: 150px;
     height: 150px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Very Small Mobile (320px and down) */
+@media (max-width: 320px) {
+  .welcome-main {
+    font-size: 2.2rem;
+  }
+
+  .welcome-sub {
+    font-size: 0.9rem;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+
+  .initial {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 1.6rem;
+  }
+
+  .social-links {
+    max-width: 260px;
+  }
+
+  .social-btn {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .qr-placeholder {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .loading-container {
+    transform: scale(0.8);
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .initial {
+    font-size: 1.8rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .social-btn {
+    padding: 0.7rem 1rem;
   }
 }
 
