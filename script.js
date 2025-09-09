@@ -3,7 +3,7 @@ const socialLinks = {
   discord: "https://discord.gg/yJ6KeWUcQe", // Thay bằng link Discord của bạn
   instagram: "https://www.instagram.com/thanhdo113003/", // Thay bằng username Instagram
   youtube:
-    "https://www.youtube.com/@thanhdoanh3003https://www.youtube.com/@thanhdoanh3003", // Thay bằng channel YouTube
+    "https://www.youtube.com/@thanhdoanh3003", // Thay bằng channel YouTube
 };
 
 // Loading Screen Animation với hiệu ứng viết tay
