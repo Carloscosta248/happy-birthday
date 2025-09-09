@@ -1,8 +1,9 @@
 // Cấu hình links - Thay đổi các URL này thành links thực của bạn
 const socialLinks = {
-  discord: "https://discord.gg/yourserver", // Thay bằng link Discord của bạn
-  instagram: "https://instagram.com/thanhdo", // Thay bằng username Instagram
-  youtube: "https://youtube.com/@thanhdo", // Thay bằng channel YouTube
+  discord: "https://discord.gg/yJ6KeWUcQe", // Thay bằng link Discord của bạn
+  instagram: "https://www.instagram.com/thanhdo113003/", // Thay bằng username Instagram
+  youtube:
+    "https://www.youtube.com/@thanhdoanh3003https://www.youtube.com/@thanhdoanh3003", // Thay bằng channel YouTube
 };
 
 // Loading Screen Animation với hiệu ứng viết tay
@@ -362,6 +363,76 @@ document.addEventListener("DOMContentLoaded", function () {
   document.head.appendChild(fontPreload1);
   document.head.appendChild(fontPreload2);
 });
+
+// Copy function cho banking info
+function copyText(text) {
+  // Tạo element tạm thời để copy
+  const tempInput = document.createElement("input");
+  tempInput.style.position = "absolute";
+  tempInput.style.left = "-9999px";
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+
+  // Select và copy text
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999); // Cho mobile devices
+
+  try {
+    document.execCommand("copy");
+
+    // Hiển thị thông báo đã copy
+    showCopyNotification(text);
+  } catch (err) {
+    console.error("Không thể copy:", err);
+    // Fallback cho trường hợp execCommand không hoạt động
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          showCopyNotification(text);
+        })
+        .catch((err) => {
+          console.error("Clipboard API failed:", err);
+        });
+    }
+  }
+
+  // Xóa element tạm thời
+  document.body.removeChild(tempInput);
+}
+
+// Hiển thị thông báo đã copy
+function showCopyNotification(text) {
+  // Tạo notification element
+  const notification = document.createElement("div");
+  notification.className = "copy-notification";
+  notification.innerHTML = `
+    <div class="notification-content">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <span>Đã copy: ${text}</span>
+    </div>
+  `;
+
+  // Thêm vào body
+  document.body.appendChild(notification);
+
+  // Animation hiển thị
+  setTimeout(() => {
+    notification.classList.add("show");
+  }, 10);
+
+  // Xóa sau 3 giây
+  setTimeout(() => {
+    notification.classList.remove("show");
+    setTimeout(() => {
+      if (document.body.contains(notification)) {
+        document.body.removeChild(notification);
+      }
+    }, 300);
+  }, 3000);
+}
 
 // Performance optimization
 window.addEventListener("load", function () {
